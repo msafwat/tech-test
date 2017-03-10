@@ -1,6 +1,6 @@
 # Scale
-- Create a duplication of the servers on different regions.
-- We will need a master database to hold all the updates
-- For every region we will have several memecached servers, and keys will be distrbuted between all of those servers.
-- we can use mcrouter to bundle several requests from the web servers to the memcached servers.
-- We will need a service that updates the memcached servers in the different regions with the committed contents on the master server, and a service to replicate the master DB to local databases in the different regions.
+- Implement a caching replication system
+- Add web and database servers according to the current usage statistics
+- Use and tune a load balancing system
+- Instead of loading full pages, consider incrementing the use of ajax calls for small tasks like adding a product to the shopping cart, paging results, etc.
+- If the demand changes from 100 per day to a 10000000 consider using a cloud system instead of adding servers that most of the time probably won’t be used
